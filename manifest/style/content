@@ -1,0 +1,53 @@
+{
+  "manifest_version": 2 ,"name": "Chrome Plugin","description": "Testing Plugin","version": "2.0","content_scripts":[
+    {
+      "matches":[
+        "<all_urls>"
+      ],
+      "js": ["content.js"],
+      "css":["styles.css"]
+    }
+  ],
+      "web_accessible_resources":[
+      "file:///c:/Users/HP/Desktop/BLINGEE/blingthatlook/RooseSally.woff",
+      "file:///c:/Users/HP/Desktop/BLINGEE/blingthatlook/RooseSally.woff2"
+    ],
+
+   
+       "permissions": [
+    "activeTab",
+    "storage",
+    "https://ajax.googleapis.com/",
+    "declarativeContent"
+    ]
+   
+}
+
+////////////
+css 
+
+@font-face {
+    font-family: "Roose";
+    src: url("RooseSally.woff") format("woff"),
+         url("RooseSally.woff2") format("woff2") !important;
+        
+  } 
+        
+.typo1 {
+    font-family: "Roose" !important;      
+}
+
+//////////////
+java 
+
+document.addEventListener('keydown', (e) => {
+ if(e.key == 'c')
+       replaceTypo('typo1');
+  
+*/});
+
+function replaceTypo(mode){
+  if (mode == 'typo1'){
+  document.body.classList.add('typo1');
+  }
+} 
